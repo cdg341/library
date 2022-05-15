@@ -107,9 +107,15 @@ table {
 td,
 th {
   padding: 10px 20px;
+  border: 1px solid black;
 }
 
 thead {
   background-color: rgb(79, 77, 77);
   color: white;
+}
+
+.deleteBtn {
+  padding: 2px 5px;
+  font-size: 0.9rem;
 }
