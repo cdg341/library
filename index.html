@@ -8,10 +8,10 @@
     <title>Library</title>
   </head>
   <body>
+    <header class="header">
+      <h1>Library Project</h1>
+    </header>
     <div class="container">
-      <header class="header">
-        <h1>Library Project</h1>
-      </header>
       <div class="addBook">
         <div>
           <form action="" id="my-form">
@@ -32,6 +32,24 @@
             <button type="submit" form="my-form">ADD A NEW BOOK</button>
           </div>
         </div>
+      </div>
+      <div class="library">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td>Game of Thrones</td>
+            <td>George R. R. Martin</td>
+            <td>694</td>
+            <td>Not read</td>
+          </tbody>
+        </table>
       </div>
     </div>
     <script src="script.js"></script>

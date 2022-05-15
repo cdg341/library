@@ -9,6 +9,12 @@ body {
   background-color: #79a6ad;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .header {
   padding: 40px;
   display: flex;
@@ -17,8 +23,6 @@ body {
 }
 
 .addBook {
-  width: 800px;
-  margin: 0 auto;
   background-color: rgb(255, 241, 241);
   box-shadow: 0 0 5px black;
   border-radius: 10px;
@@ -43,7 +47,7 @@ input {
   padding: 5px;
   border: none;
   border-bottom: 2px dotted black;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 input:active,
@@ -83,4 +87,29 @@ input:focus {
 .addBook button:hover {
   background-color: lightgray;
   cursor: pointer;
+}
+
+.library {
+  background-color: rgb(255, 241, 241);
+  box-shadow: 0 0 5px black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+td,
+th {
+  padding: 10px 20px;
+}
+
+thead {
+  background-color: rgb(79, 77, 77);
+  color: white;
 }
