@@ -115,7 +115,7 @@ thead {
   color: white;
 }
 
-.deleteBtn {
-  padding: 2px 5px;
-  font-size: 0.9rem;
+.domBtn {
+  font-size: 1rem;
+  padding: 5px 10px;
 }
