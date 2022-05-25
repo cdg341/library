@@ -16,6 +16,7 @@ button.addEventListener("click", () => {
   } else {
     checkbox.value = "I have not read";
   }
+
   //runs function to display the book in the library
   displayBooks();
   console.log(myLibrary);
@@ -41,8 +42,8 @@ function displayBooks() {
 
   myLibrary.forEach((myLibrary) => {
     const row = document.createElement("tr");
-    const deleteBtn = document.createElement("button");
     const readStatus = document.createElement("button");
+    const deleteBtn = document.createElement("button");
     const dataReadBtn = document.createElement("td");
     const dataDeleteBtn = document.createElement("td");
 
@@ -65,11 +66,12 @@ function displayBooks() {
     row.appendChild(dataDeleteBtn);
 
     //Button to change read status
-    readStatus.addEventListener("click", () => {
+    /*  readStatus.addEventListener("click", () => {
       if (checkbox.checked) {
-        checkbox.value = "I have not read";
+        Book.checkbox = "I have not readsfdgsdfgdsfg";
       } else checkbox.value = "I have read";
-    });
+      console.log(Book.checkbox);
+    }); */
 
     //Button to remove book from library
     deleteBtn.addEventListener("click", () => {
@@ -79,12 +81,3 @@ function displayBooks() {
     });
   });
 }
-
-// addBookToLibrary(title.value, author.value, pages.value, checkbox.value);
-// addBookToLibrary("The Hobbit", "JRR", "600", "I have not read");
-// addBookToLibrary("The Hobbit", "JRR", "600", "I have not read");
-// addBookToLibrary("The Hobbit", "JRR", "600", "I have not read");
-
-// displayBooks();
-
-console.log(myLibrary);
