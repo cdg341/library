@@ -4,26 +4,33 @@ let author = document.getElementById("author");
 let pages = document.getElementById("pages");
 const tbody = document.querySelector("tbody");
 const checkbox = document.getElementById("checkbox");
+const table = document.querySelector("table");
 
 // Declare empty array for library
 let myLibrary = [];
 
-//Button that takes the input and add it to the library
+//Adds book to the library
 button.addEventListener("click", () => {
-  //make sure checkbox has a value of read or not read
+  //Make sure array is cleared before adding a book
+  myLibrary = [];
+
+  //Make sure checkbox has a value of read or not read
   if (checkbox.checked) {
     checkbox.value = "I have read";
   } else {
     checkbox.value = "I have not read";
   }
 
-  //runs function to display the book in the library
-  displayBooks();
-  console.log(myLibrary);
-  //clear array after book has been added
-  myLibrary = [];
+  //Make sure all inputs have been filled out and displays books
+  if (title.value == "" || author.value == "" || isNaN(pages.value)) {
+    alert("Please fill out all fields correctly");
+  } else {
+    displayBooks();
+    document.querySelector("form").reset();
+  }
 });
 
+//Object constructor
 function Book(title, author, pages, checkbox) {
   this.title = title;
   this.author = author;
@@ -31,13 +38,14 @@ function Book(title, author, pages, checkbox) {
   this.read = checkbox;
 }
 
+//Pushes input into the array
 function addBookToLibrary(title, author, pages, checkbox) {
   let book = new Book(title, author, pages, checkbox);
   myLibrary.push(book);
 }
 
+//Takes the data from user and displays it on the table
 function displayBooks() {
-  //gets input from user
   addBookToLibrary(title.value, author.value, pages.value, checkbox.value);
 
   myLibrary.forEach((myLibrary) => {
@@ -54,6 +62,7 @@ function displayBooks() {
     deleteBtn.textContent = "Delete";
 
     tbody.appendChild(row);
+
     for (let key in myLibrary) {
       const data = document.createElement("td");
       data.textContent = `${myLibrary[key]}`;
@@ -66,12 +75,17 @@ function displayBooks() {
     row.appendChild(dataDeleteBtn);
 
     //Button to change read status
-    /*  readStatus.addEventListener("click", () => {
-      if (checkbox.checked) {
-        Book.checkbox = "I have not readsfdgsdfgdsfg";
-      } else checkbox.value = "I have read";
-      console.log(Book.checkbox);
-    }); */
+    readStatus.addEventListener("click", () => {
+      let status = row.cells[3];
+
+      if (myLibrary.read == "I have not read") {
+        myLibrary.read = "I have read";
+        status.textContent = myLibrary.read;
+      } else if (myLibrary.read == "I have read") {
+        myLibrary.read = "I have not read";
+        status.textContent = myLibrary.read;
+      }
+    });
 
     //Button to remove book from library
     deleteBtn.addEventListener("click", () => {
