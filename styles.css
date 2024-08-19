@@ -23,7 +23,8 @@ body {
 }
 
 .addBook {
-  background-color: rgb(255, 241, 241);
+  /* background-color: rgb(255, 241, 241); */
+  background-color: #fff;
   box-shadow: 0 0 5px black;
   border-radius: 10px;
   height: 600px;
@@ -90,7 +91,8 @@ input:focus {
 }
 
 .library {
-  background-color: rgb(255, 241, 241);
+  /* background-color: rgb(255, 241, 241); */
+  background-color: #fff;
   box-shadow: 0 0 5px black;
   border-radius: 10px;
   text-align: center;
